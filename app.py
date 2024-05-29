@@ -118,10 +118,10 @@ def delete_user():
     user_id = request.form["user_id"]
     # users.check_csrf() <- This should be done to prevent CSRF attacks
 
-    admin = (session["user_role"] == "admin")
-    own_profile = (user_id == session["user_id"])
-    if not admin or not own_profile:
-        abort(403)
+    # admin = (session["user_role"] == "admin")
+    # own_profile = (user_id == session["user_id"])
+    #if not admin or not own_profile:
+    #    abort(403)
 
     users.remove_user(user_id)
     return redirect("/admin")
