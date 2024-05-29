@@ -1,6 +1,6 @@
 # Cyber Security Base - Project I
 
-This is a project for the Cyber Security Base course. The application contains security flaws as implementing them was part of the given instructions and therefore the application should not be used. If you are interested, you can [read my essay]() about fixing the security flaws!
+This is a project for the Cyber Security Base course. The application contains security flaws as implementing them was part of the given instructions and therefore the application should not be used.
 
 ### Before installing the application
 
