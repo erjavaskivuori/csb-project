@@ -1,0 +1,98 @@
+body {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar {
+    padding-top: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0;
+    max-width: 800px;
+    padding: 20px;
+}
+.message-box {
+    width: 100%;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #000;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.message-form {
+    width: 100%;
+    margin-top: 10px;
+}
+.message-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+.message-form button {
+    display: block;
+    margin: 10px 0;
+}
+.user-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.role-form select, .role-form .save-button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.role-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+.save-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-account {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}

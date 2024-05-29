@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatAPP</title>
+
+<nav class="navbar">
+    {% if session.username %}
+    <ul>
+        <div>
+            <button>
+                <a href="/">Chat</a>
+                </button>
+            <button>
+            <a href="/users/{{ session.user_id }}">Profile</a>
+            </button>
+            {% if session.user_role == "admin" %}
+            <button>
+            <a href="/admin">Admin dashboard</a>
+            </button>
+            {% endif %}
+            <button>
+            <a href="/logout">Log out</a>
+            </button>
+        </div>
+    </ul>
+    {% else %}
+    <button>
+        <a href="/register">Register</a>
+    </button>
+    <button>
+    <a href="/login">Login</a>
+    </button>
+    {% endif %}
+</nav>
+<br>
+{% block content %}{% endblock %}

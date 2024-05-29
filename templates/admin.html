@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Admin Dashboard</h2>
+
+    <div id="users">
+        <h2>Users</h2>
+        <ul id="user-list">
+            {% for user in users %}
+            <li class="user-grid">
+                <span class="user-id">{{ user.id }}</span>
+                <a href="/users/{{ user.id }}" class="user-link">
+                <span class="username">{{ user.username }}</span>
+                </a>
+                <form action="/editrole" method="post" class="role-form">
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <select name="role">
+                        <option value="user" {% if user.role == 'user' %}selected{% endif %}>User</option>
+                        <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
+                    </select>
+                    <!--<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">-->
+                    <button type="submit" class="save-button">Save</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

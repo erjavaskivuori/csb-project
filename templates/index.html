@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    {% if session['user_id'] %}
+        <h2>Chat</h2>
+        {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+        <div id="messageBox" class="message-box">
+            {% for message in messages|reverse %}
+                <p><strong>{{ message.username }}</strong> {{ message.message }}</p>
+            {% endfor %}
+        </div>
+        
+        <form action="/send" method="post" class="message-form">
+            <textarea name="message" rows="3" placeholder="Write a message"></textarea>
+            <br>
+            <!--<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">-->
+            <button type="submit">Send</button>
+        </form>
+    {% else %}
+        <h2>Chat - Login to send messages</h2>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>User Profile</h1>
+    <div>
+        <h2 for="name">Name: {{ user.username }}</h2>
+    </div>
+    <div>
+        <h2 for="role">Role: {{ user.role }}</h2>
+    </div>
+    <h4>Deleting user is permanent!</h4>
+    <form action="/deleteuser" method="post">
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        <!--<input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">-->
+        <button type="submit" class="delete-account">Delete user</button>
+</div>
+{% endblock %}
