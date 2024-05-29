@@ -10,12 +10,16 @@ You should have [Python](https://wiki.python.org/moin/BeginnersGuide/Download) a
 
 1. Clone the repository
 
-2. Create `.env` file
+2. Create `.env` file and database
 
 In the file the contents should be
 ```
-DATABASE=<name_of_your_db_file>     # is used in the initialization of database
 SECRET_KEY=<your_secret_key>        # is used by the flask app
+```
+
+Create file db.sqlite3 for the database
+```
+$ touch db.sqlite
 ```
 
 3. Create a virtual environment in the directory
@@ -33,7 +37,12 @@ source <name of your venv>/bin/activate
 pip install -r requirements.txt
 ```
 
-6. Launch the application
+6. Initialize the database
+```
+python3 db_connection.py
+```
+
+7. Launch the application
 ```
 flask run
 ```
@@ -42,7 +51,17 @@ flask run
 
 1. Clone the repository
 
-2. Create `.env` file
+2. Create `.env` file and database
+
+In the file the contents should be
+```
+SECRET_KEY=<your_secret_key>        # is used by the flask app
+```
+
+Create file db.sqlite3 for the database
+```
+touch db.sqlite
+```
 
 In the file the contents should be
 ```
@@ -70,7 +89,12 @@ python -m venv <name of your venv>
 pip install -r requirements.txt
 ```
 
-6. Launch the application
+6. Initialize the database
+```
+python3 db_connection.py
+```
+
+7. Launch the application
 ```
 flask run
 ```
