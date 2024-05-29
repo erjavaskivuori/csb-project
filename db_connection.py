@@ -2,7 +2,7 @@ import os
 import sqlite3
 from flask import g
 
-database = os.getenv('DATABASE')
+database = 'db.sqlite3'
 
 def get_db():
     connection = sqlite3.connect(database)

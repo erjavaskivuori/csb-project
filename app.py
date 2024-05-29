@@ -1,4 +1,5 @@
 # the commented out code is the code that should be used in the secure version
+import os
 from string import printable
 from flask import Flask, render_template, request, redirect, url_for, session, abort
 import users
@@ -86,10 +87,11 @@ def register():
 
 @app.route("/users/<int:id>")
 def user(id):
-    admin = (session["user_role"] == "admin")
-    own_profile = (id == session["user_id"])
-    if not admin or not own_profile:
-        abort(403)
+    # admin = (session["user_role"] == "admin")
+    # own_profile = (id == session["user_id"])
+    
+    #if not admin or not own_profile:
+    #    abort(403)
 
     user = users.get_user(id)
     return render_template("user.html", user=user)
@@ -103,7 +105,7 @@ def admin():
 
 @app.route("/editrole", methods=["POST"])
 def edit_role():
-    users.require_role()
+    # users.require_role()
     # users.check_csrf() <- This should be done to prevent CSRF attacks
 
     user_id = request.form["user_id"]
