@@ -1,6 +1,6 @@
 # Cyber Security Base - Project I
 
-This is a project for the Cyber Security Base course. The application contains security flaws as implementing them was part of the given instructions and therefore the application should not be used.
+This is a project for the Cyber Security Base course. The application contains security flaws as implementing them was [part of the given instructions](https://cybersecuritybase.mooc.fi/module-3.1).
 
 ### Before installing the application
 
